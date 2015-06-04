@@ -68,7 +68,7 @@ def population_sd(set_of_data):
 def sample_sd(set_of_data):
     return math.sqrt(sample_variance(set_of_data))
 
-# coefficient of variation
+# coefficient of variation: 
 
 def population_cv(set_of_data):
     return population_sd(set_of_data)/mean(set_of_data)
@@ -76,6 +76,22 @@ def population_cv(set_of_data):
 def sample_cv(set_of_data):
     return sample_sd(set_of_data)/mean(set_of_data)
 
-a = sample_sd(sample_sets.set5)
+#weighted means
+
+def pair_values(list1,list2):
+    return dict(zip(list1,list2))
+
+def weighted_mean(list1,list2):
+    sum = 0
+    sum_weights = 0
+    paired = pair_values(list1,list2)
+    for i, j in paired.items():
+         sum += i*j
+         sum_weights += j
+    return sum/sum_weights
+
+a = weighted_mean(sample_sets.paired_set1a, sample_sets.paired_set1b)
+
+paired = pair_values(sample_sets.paired_set1a, sample_sets.paired_set1b)
 
 print(a)
