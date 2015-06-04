@@ -3,7 +3,7 @@ import ave
 
 # measures of variability (1)
 
-def range(set_of_data):
+def var_range(set_of_data):
     return max(set_of_data) - min(set_of_data)
 
 def iqr(set_of_data):
