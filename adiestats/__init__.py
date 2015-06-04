@@ -92,6 +92,4 @@ def weighted_mean(list1,list2):
 
 a = weighted_mean(sample_sets.paired_set1a, sample_sets.paired_set1b)
 
-paired = pair_values(sample_sets.paired_set1a, sample_sets.paired_set1b)
-
 print(a)
