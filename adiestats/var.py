@@ -47,7 +47,7 @@ def sd(set_of_data, data_type = "sample"):
 def cv(set_of_data, data_type = "sample"):
     return sd(set_of_data, data_type)/ave.mean(set_of_data)
 
-#approximate variance for grouped data
+#approximate variance and standard deviation for grouped data
 
 def var_grouped(values,frequencies,data_type = "sample"):
     x = 0
@@ -63,11 +63,5 @@ def var_grouped(values,frequencies,data_type = "sample"):
         n -= 1
     return x/n
 
-def weighted_mean(values,weights):
-    sum = 0
-    sum_weights = 0
-    paired = proc.pair_values(values,weights)
-    for value, weight in paired.items():
-        sum += value*weight
-        sum_weights += weight
-    return sum/sum_weights
+def sd_grouped(values, frequencies, data_type = "sample"):
+    return math.sqrt(var_grouped(values, frequencies, data_type))

@@ -15,5 +15,5 @@ print(b)
 c = ave.mean_grouped(sample_sets.m,sample_sets.f)
 print(c)
 
-c = var.var_grouped(sample_sets.m,sample_sets.f)
+c = var.sd_grouped(sample_sets.m,sample_sets.f)
 print(c)
