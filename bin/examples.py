@@ -11,3 +11,9 @@ print(a)
 b = var.cv(sample_sets.set5)
 
 print(b)
+
+c = ave.mean_grouped(sample_sets.m,sample_sets.f)
+print(c)
+
+c = var.var_grouped(sample_sets.m,sample_sets.f)
+print(c)

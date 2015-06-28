@@ -15,3 +15,8 @@ set5=[50, 60, 70, 80, 90]
 
 paired_set1a=[4,3,2,1]
 paired_set1b=[3,3,4,5]
+
+#for testing approximate mean and variance for grouped data
+
+m = [1,3,5,7,9]
+f = [2,3,6,5,4]

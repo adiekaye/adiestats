@@ -48,5 +48,11 @@ def cv(set_of_data, data_type = "sample"):
 
 #approximate variance for grouped data
 
-def var_grouped(means,frequencies,data_type = "sample"):
-    return weighted_mean(means,frequencies)
+def var_grouped(set_of_data,frequencies,data_type = "sample"):
+    x = 0
+    n = len(set_of_data)-1
+    if data_type == "population":
+        n += 1
+    for item in set_of_data:
+        x += (item-ave.mean(set_of_data))**2
+    return x/n

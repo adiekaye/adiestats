@@ -1,3 +1,5 @@
+from . import data_processes as proc
+
 # averages
 
 def mean(set_of_data):
@@ -21,13 +23,10 @@ def mode(set_of_data):
 
 #weighted means
 
-def pair_values(list1,list2):
-    return dict(zip(list1,list2))
-
 def weighted_mean(values,weights):
     sum = 0
     sum_weights = 0
-    paired = pair_values(values,weights)
+    paired = proc.pair_values(values,weights)
     for value, weight in paired.items():
         sum += value*weight
         sum_weights += weight
@@ -37,4 +36,3 @@ def weighted_mean(values,weights):
 
 def mean_grouped(means,frequencies):
     return weighted_mean(means,frequencies)
-    
