@@ -1,5 +1,5 @@
 import math
-import ave
+from . import ave
 
 # measures of variability (1)
 

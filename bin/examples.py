@@ -1,9 +1,8 @@
-""" import math
-import sample_sets
-import ave
-import var """
+import sys
+import os.path
 
-from ..adiestats import *
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from adiestats import ave, sample_sets, var
 
 a = ave.weighted_mean(sample_sets.paired_set1a, sample_sets.paired_set1b)
 
