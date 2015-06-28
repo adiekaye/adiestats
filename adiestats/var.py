@@ -27,35 +27,26 @@ def iqr(set_of_data):
 #
 # variance:
 
-def population_variance(set_of_data):
+def variance(set_of_data, data_type = "sample"):
     x = 0
+    n = len(set_of_data)-1
+    if data_type == "population":
+        n += 1
     for item in set_of_data:
         x += (item-ave.mean(set_of_data))**2
-    return x/len(set_of_data)
-
-def sample_variance(set_of_data):
-    x = 0
-    for item in set_of_data:
-        x += (item-ave.mean(set_of_data))**2
-    return x/(len(set_of_data)-1)
+    return x/n
 
 # standard deviation:
 
-def population_sd(set_of_data):
-    return math.sqrt(population_variance(set_of_data))
-
-def sample_sd(set_of_data):
-    return math.sqrt(sample_variance(set_of_data))
+def sd(set_of_data, data_type = "sample"):
+    return math.sqrt(variance(set_of_data, data_type))
 
 # coefficient of variation: 
 
-def population_cv(set_of_data):
-    return population_sd(set_of_data)/ave.mean(set_of_data)
-
-def sample_cv(set_of_data):
-    return sample_sd(set_of_data)/ave.mean(set_of_data)
+def cv(set_of_data, data_type = "sample"):
+    return sd(set_of_data, data_type)/ave.mean(set_of_data)
 
 #approximate variance for grouped data
 
-def mean_grouped(means,frequencies):
+def var_grouped(means,frequencies,data_type = "sample"):
     return weighted_mean(means,frequencies)
