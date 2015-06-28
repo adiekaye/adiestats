@@ -54,3 +54,8 @@ def population_cv(set_of_data):
 
 def sample_cv(set_of_data):
     return sample_sd(set_of_data)/ave.mean(set_of_data)
+
+#approximate variance for grouped data
+
+def mean_grouped(means,frequencies):
+    return weighted_mean(means,frequencies)

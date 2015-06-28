@@ -24,11 +24,17 @@ def mode(set_of_data):
 def pair_values(list1,list2):
     return dict(zip(list1,list2))
 
-def weighted_mean(list1,list2):
+def weighted_mean(values,weights):
     sum = 0
     sum_weights = 0
-    paired = pair_values(list1,list2)
-    for i, j in paired.items():
-        sum += i*j
-        sum_weights += j
+    paired = pair_values(values,weights)
+    for value, weight in paired.items():
+        sum += value*weight
+        sum_weights += weight
     return sum/sum_weights
+
+#approximate mean for grouped data
+
+def mean_grouped(means,frequencies):
+    return weighted_mean(means,frequencies)
+    
