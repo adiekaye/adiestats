@@ -54,11 +54,9 @@ def var_grouped(values,frequencies,data_type = "sample"):
     n = 0
     mu = ave.mean_grouped(values,frequencies)
     paired = proc.pair_values(values,frequencies)
-    print(paired)
     for m,f in paired.items():
         x += f*(m-mu)**2
         n += f
-        print(x,m,f,n)
     if data_type == "sample":
         n -= 1
     return x/n
