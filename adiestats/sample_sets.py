@@ -18,5 +18,5 @@ paired_set1b=[3,3,4,5]
 
 #for testing approximate mean and variance for grouped data
 
-m = [1,3,5,7,9]
+m = [1.0,3.0,5.0,7.0,9.0]
 f = [2,3,6,5,4]

@@ -1,5 +1,6 @@
 import math
 from . import ave
+from . import data_processes as proc
 
 # measures of variability (1)
 
@@ -48,11 +49,25 @@ def cv(set_of_data, data_type = "sample"):
 
 #approximate variance for grouped data
 
-def var_grouped(set_of_data,frequencies,data_type = "sample"):
+def var_grouped(values,frequencies,data_type = "sample"):
     x = 0
-    n = len(set_of_data)-1
-    if data_type == "population":
-        n += 1
-    for item in set_of_data:
-        x += (item-ave.mean(set_of_data))**2
+    n = 0
+    mu = ave.mean_grouped(values,frequencies)
+    paired = proc.pair_values(values,frequencies)
+    print(paired)
+    for m,f in paired.items():
+        x += f*(m-mu)**2
+        n += f
+        print(x,m,f,n)
+    if data_type == "sample":
+        n -= 1
     return x/n
+
+def weighted_mean(values,weights):
+    sum = 0
+    sum_weights = 0
+    paired = proc.pair_values(values,weights)
+    for value, weight in paired.items():
+        sum += value*weight
+        sum_weights += weight
+    return sum/sum_weights
