@@ -36,3 +36,13 @@ def weighted_mean(values,weights):
 
 def mean_grouped(means,frequencies):
     return weighted_mean(means,frequencies)
+
+#generating a geometric mean, or 'growth rate'
+
+def geometric_mean(xs):
+    n = len(xs)
+    product = 1
+    for x in xs:
+        product *= x
+    return product**(1/n)
+

@@ -21,3 +21,6 @@ print(c)
 
 c = adiestats.var.sd_grouped(data.m,data.f)
 print(c)
+
+d = adiestats.ave.geometric_mean(data.growths)
+print(d)
