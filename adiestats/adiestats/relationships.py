@@ -19,3 +19,6 @@ def cov (xs, ys, data_type = "sample"):
     for x,y in paired.items():
         sum += (x-mu_x)*(y-mu_y)
     return sum/n
+
+def cor (xs, ys, data_type = "sample"):
+    return cov(xs,ys,data_type)/(var.sd(xs,data_type)*var.sd(ys,data_type))

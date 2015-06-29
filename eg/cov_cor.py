@@ -9,3 +9,5 @@ from data import sample_sets as data
 
 a = adiestats.relationships.cov(data.x,data.y)
 print(a)
+b = adiestats.relationships.cor(data.x,data.y)
+print(b)
