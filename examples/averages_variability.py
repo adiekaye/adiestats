@@ -1,3 +1,5 @@
+#examples for using the averages and variability modules
+
 import sys
 import os.path
 
