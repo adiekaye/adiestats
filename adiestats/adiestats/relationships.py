@@ -8,6 +8,8 @@ from . import ave
 from . import var
 from . import data_processes as proc
 
+#finding covariance of two variables x and y
+
 def cov (xs, ys, data_type = "sample"):
     n = len(xs) - 1
     sum = 0
@@ -19,6 +21,8 @@ def cov (xs, ys, data_type = "sample"):
     for x,y in paired.items():
         sum += (x-mu_x)*(y-mu_y)
     return sum/n
+
+#finding the correlation coefficient of two variables x and y
 
 def cor (xs, ys, data_type = "sample"):
     return cov(xs,ys,data_type)/(var.sd(xs,data_type)*var.sd(ys,data_type))

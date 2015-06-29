@@ -7,7 +7,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import adiestats
 from data import sample_sets as data
 
-a = adiestats.relationships.cov(data.x,data.y)
+a = adiestats.relationships.cov(data.x,data.y,"population")
 print(a)
-b = adiestats.relationships.cor(data.x,data.y)
+b = adiestats.relationships.cor(data.x,data.y,"sample")
 print(b)
+
+c = adiestats.relationships.cor(data.temperature,data.sales,"population")
+print(c)
