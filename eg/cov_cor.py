@@ -17,3 +17,6 @@ print(c)
 
 d = adiestats.relationships.get_relationship(data.x,data.y)
 print(d)
+
+e = adiestats.relationships.least_squares_regr(data.x,data.y)
+print(e)

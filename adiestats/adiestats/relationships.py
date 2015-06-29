@@ -50,9 +50,7 @@ def get_relationship(xs, ys, data_type = "sample"):
 
 #least squares regression
 
-"""
 def least_squares_regr(xs, ys, data_type="sample"):
-    b1 = 
-    b2 =
-    return b1, b2
-"""
+    b1 = cov(xs,ys,data_type)/var.variance(xs)
+    b0 = ave.mean(ys)-ave.mean(xs)*b1
+    return b0, b1
