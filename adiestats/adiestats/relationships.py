@@ -16,6 +16,6 @@ def cov (xs, ys, data_type = "sample"):
     mu_x = ave.mean(xs)
     mu_y = ave.mean(ys)
     paired = proc.pair_values(xs,ys)
-    for x,y in paired:
-        sum += (x-mu_x)(y-mu_y)
+    for x,y in paired.items():
+        sum += (x-mu_x)*(y-mu_y)
     return sum/n
