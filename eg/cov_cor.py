@@ -14,3 +14,6 @@ print(b)
 
 c = adiestats.relationships.cor(data.temperature,data.sales,"population")
 print(c)
+
+d = adiestats.relationships.get_relationship(data.x,data.y)
+print(d)
