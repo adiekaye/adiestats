@@ -63,3 +63,14 @@ def var_grouped(values,frequencies,data_type = "sample"):
 
 def sd_grouped(values, frequencies, data_type = "sample"):
     return math.sqrt(var_grouped(values, frequencies, data_type))
+
+#calculate skewness:
+
+def skewness(xs, data_type = "sample"):
+    n = len(xs)
+    sum = 0
+    x_bar = ave.mean(xs)
+    s = sd(xs, data_type)
+    for x in xs:
+        sum += (x-x_bar)**3
+    return sum/(n*s**3)
