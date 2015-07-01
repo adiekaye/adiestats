@@ -64,7 +64,7 @@ def var_grouped(values,frequencies,data_type = "sample"):
 def sd_grouped(values, frequencies, data_type = "sample"):
     return math.sqrt(var_grouped(values, frequencies, data_type))
 
-#calculate skewness:
+#calculate skewness: - NOTE, this is currently untested
 
 def skewness(xs, data_type = "sample"):
     n = len(xs)
